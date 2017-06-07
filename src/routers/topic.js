@@ -2,27 +2,35 @@ const router = require('koa-router')()
 const service = require('../services/topic')
 
 router.get('/', async function(cxt) {
-  var shares = await service.list()
-  cxt.body = shares
+  var list = await service.list()
+  cxt.body = list
 })
 
 router.get('/:id', async function(cxt) {
   var id = cxt.params.id
-  var share = await service.get(id)
-  cxt.body = share
+  var topic = await service.get(id)
+  cxt.body = topic
 })
 
 router.post('/', async function(cxt) {
-  var share = cxt.request.body
-  share = await service.create(share)
-  cxt.body = share
+  var topic = cxt.request.body
+  share = await service.create(topic)
+  cxt.body = topic
 })
 
 router.put('/:id', async function(cxt) {
   var id = cxt.params.id
-  var share = cxt.request.body
-  var share = await service.update(id, share)
-  cxt.body = share
+  var topic = cxt.request.body
+  var topic = await service.update(id, topic)
+  cxt.body = topic
+})
+
+// 审核帖子
+router.put('/:id/audit', async function(cxt) {
+  var id = cxt.params.id
+  var topic = cxt.request.body
+  var topic = await service.update(id, topic)
+  cxt.body = topic
 })
 
 router.delete('/:id', async function(cxt) {

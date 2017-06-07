@@ -1,4 +1,4 @@
-const Model = require('../models/recode')
+const Model = require('../models/record')
 
 module.exports = {
   /**

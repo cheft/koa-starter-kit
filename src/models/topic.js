@@ -34,6 +34,15 @@ module.exports = sequelize.define('topic', {
   // 被举报次数
   reportCount: {
     type: Sequelize.INTEGER
+  },
+
+  // 帖子状态，0-草稿箱, 1-发布中, 2-历史
+  status: {
+    type: Sequelize.INTEGER,
+    defaultValue: 0
+  },
+
+  auditAt: {
+    type: Sequelize.DATE
   }
-  
 })
