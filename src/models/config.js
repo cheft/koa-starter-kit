@@ -1,9 +1,20 @@
 const Sequelize = require('sequelize')
 const sequelize = require('../utils/sequelize')
 
-module.exports = sequelize.define('share', {
+/**
+ * 系统配置表
+ */
+module.exports = sequelize.define('config', {
   // id: { type: Sequelize.UUID, primaryKey: true}, // UUID 不能自动生成
   id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true},
-  title: { type: Sequelize.STRING },
-  content: { type: Sequelize.STRING },
+  // 配置类型，1-system, 2-report, ...
+  
+  type: {
+    type: Sequelize.INTEGER
+  },
+  
+  // 配置项
+  value: {
+    type: Sequelize.STRING
+  }
 })

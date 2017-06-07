@@ -1,8 +1,12 @@
 const fs = require('fs')
 const path = require('path')
 
-fs.readdirSync(path.resolve(__dirname, '../models')).forEach(function(file) {
-  if (file.indexOf('.js') !== -1) {
-    require('../models/' + file).sync({force: true})
-  }
+require('../models/config').sync({force: true})
+require('../models/user').sync({force: true}).then(function() {
+  require('../models/glory').sync({force: true})
+  require('../models/chat').sync({force: true})
+  require('../models/notice').sync({force: true})
+  require('../models/topic').sync({force: true}).then(function() {
+    require('../models/record').sync({force: true})
+  })
 })

@@ -1,4 +1,4 @@
-const Model = require('../models/share')
+const Model = require('../models/topic')
 
 module.exports = {
   /**
@@ -47,26 +47,10 @@ module.exports = {
   },
 
   /**
-   * 喜欢此分享贴
-   * id: 分享贴 id
+   * 获取当前用户的所有收藏贴，分页
+   * page: 页码
    */
-  like: function(id) {
-    
-  },
-
-  /**
-   * 讨厌此分享贴
-   * id: 分享贴 id
-   */
-  hate: function(id) {
-
-  },
-
-  /**
-   * 收藏此分享贴
-   * id: 分享贴 id
-   */
-  collect: function(id) {
+  collect: function(page) {
 
   }
 }

@@ -24,10 +24,9 @@ module.exports = {
   },
 
   /**
-   * 获取当前用户的所有收藏贴，分页
-   * page: 页码
+   * 获取当前登录用户
    */
-  collect: function(page) {
-
+  getLogin: function() {
+    return '';
   }
 }

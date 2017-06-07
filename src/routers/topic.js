@@ -1,5 +1,5 @@
 const router = require('koa-router')()
-const service = require('../services/share')
+const service = require('../services/topic')
 
 router.get('/', async function(cxt) {
   var shares = await service.list()
