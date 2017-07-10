@@ -1,8 +1,12 @@
 const router = require('koa-router')()
 const service = require('../services/user')
 
-router.post('/login', async function(cxt) {
+router.get('/', async function(cxt) {
   cxt.body = 'test users list'
+})
+
+router.post('/login', async function(cxt) {
+  cxt.body = 'logic'
 })
 
 router.post('/register', async function(cxt) {

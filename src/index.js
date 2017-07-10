@@ -5,4 +5,12 @@ const app = new Koa()
 
 app.use(bodyparser({ formLimit: '20mb', jsonLimit: '20mb' }))
 app.use(router.routes())
-app.listen(3000)
+
+// response
+app.use(function(cxt, next, a) {
+  console.log(cxt)
+})
+
+app.listen(4000, function(err) {
+  console.log('> Ready on http://localhost:4000')
+})
